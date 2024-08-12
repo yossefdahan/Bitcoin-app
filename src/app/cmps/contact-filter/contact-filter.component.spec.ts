@@ -10,8 +10,10 @@ describe('ContactFilterComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ContactFilterComponent]
     })
-    .compileComponents();
+      .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(ContactFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

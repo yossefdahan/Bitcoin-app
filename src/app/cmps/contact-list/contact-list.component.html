@@ -1,1 +1,15 @@
-<p>contact-list works!</p>
+<section class="contact-list">
+
+    <ul *ngIf="contacts">
+        <li *ngFor="let contact of contacts">
+            {{ contact.name }} - {{ contact.email }} - {{ contact.phone }}
+        </li>
+    </ul>
+    <div *ngFor="let contact of contacts">
+        <contact-preview [contact]="contact"></contact-preview>
+    </div>
+    <div *ngIf="!contacts">
+        No contacts available.
+    </div>
+
+</section>

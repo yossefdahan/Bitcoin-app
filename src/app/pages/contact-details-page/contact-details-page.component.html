@@ -1,1 +1,13 @@
-<p>contact-details-page works!</p>
+<section class="contact-details-page">
+
+    <div *ngIf="contact">
+        <h1>{{ contact.name }}</h1>
+        <p>Email: {{ contact.email }}</p>
+        <p>Phone: {{ contact.phone }}</p>
+    </div>
+
+    <div *ngIf="!contact">
+        <p>Loading contact details...</p>
+    </div>
+
+</section>

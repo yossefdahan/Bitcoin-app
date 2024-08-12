@@ -9,27 +9,11 @@ import { Observable } from 'rxjs';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
-export class HomePageComponent implements OnInit {
-  user: User | null = null
-  bitcoinRate: number | null = null
-
+export class HomePageComponent {
   userService = inject(UserService)
   bitcoinService = inject(BitcoinService)
-
-  ngOnInit(): void {
-    this.user = this.userService.getUser()
-
-    this.bitcoinService.getRate(this.user.coins).subscribe({
-      next: value => {
-        this.bitcoinRate = value
-      },
-      error: err => {
-        console.error("Error fetching Bitcoin rate:", err)
-      }
-    })
-
-  }
-
+  user: User = this.userService.getUser()
+  BTC$: Observable<string> = this.bitcoinService.getRate(this.user.coins)
 
 
 }

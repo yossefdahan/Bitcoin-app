@@ -12,7 +12,11 @@ import { ContactEditPageComponent } from './pages/contact-edit-page/contact-edit
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { provideHttpClient } from '@angular/common/http';
-
+import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
+import { ChartComponent } from './cmps/chart/chart.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxChartsModule } from '@swimlane/ngx-charts'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,11 +27,16 @@ import { provideHttpClient } from '@angular/common/http';
     ContactDetailsPageComponent,
     ContactEditPageComponent,
     ContactPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    StatisticPageComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [provideHttpClient()],
   bootstrap: [AppComponent]
